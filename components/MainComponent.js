@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Home from './HomeComponent'
+import Reservation from './ReservationComponent'
 import { View, Platform, StyleSheet } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { createStackNavigator } from 'react-navigation-stack'
@@ -35,6 +36,36 @@ const HomeNavigator = createStackNavigator(
   }
 )
 
+const ReservationNavigator = createStackNavigator(
+  {
+    Reservation: { screen: Reservation }
+  },
+  {
+    // FIXME: change color scheme
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerTransparent: 'true',
+      headerStyle: {
+        backgroundColor: 'rgba(0,0,0,0.4)'
+      },
+      headerTitleStyle: {
+        textAlign: 'center',
+        color: '#fff',
+        flex: 1,
+        marginRight: 60
+      },
+      headerLeft: (
+        <Icon
+          name='calendar-alt'
+          type='font-awesome-5'
+          color='#c0c0c0'
+          iconStyle={{ marginLeft: 60 }}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      )
+    })
+  }
+)
+
 const MainNavigator = createDrawerNavigator(
   {
     Home: {
@@ -42,6 +73,20 @@ const MainNavigator = createDrawerNavigator(
       navigationOptions: {
         drawerIcon: ({ tintColor }) => (
           <Icon name='home' type='font-awesome' size={24} color={tintColor} />
+        )
+      }
+    },
+    Reservation: {
+      screen: ReservationNavigator,
+      navigationOptions: {
+        drawerLabel: 'Reserve a Private Room',
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name='calendar-alt'
+            type='font-awesome-5'
+            size={24}
+            color={tintColor}
+          />
         )
       }
     }

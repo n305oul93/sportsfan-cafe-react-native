@@ -7,13 +7,18 @@ class Home extends Component {
     title: 'Sports Fan Cafè'
   }
 
+  // FIXME: change color scheme
   render() {
     return (
       <ImageBackground source={thorpeness} style={styles.image} blurRadius={2}>
         <Text style={styles.smallTitle}>Dallas Premier Sports Cafè</Text>
         <Text style={styles.title}>Sports, Fun & Food</Text>
         <View style={styles.titleButton}>
-          <Button title='Request a Room' color='#188af5' />
+          <Button
+            title='Request a Room'
+            color='#188af5'
+            onPress={() => this.props.navigation.navigate('Reservation')}
+          />
         </View>
       </ImageBackground>
     )
@@ -37,7 +42,6 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   image: {
-    // background: linear - gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
     height: '100%',
     resizeMode: 'cover',
     justifyContent: 'center'
