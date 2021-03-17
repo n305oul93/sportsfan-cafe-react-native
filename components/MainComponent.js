@@ -3,6 +3,7 @@ import Home from './HomeComponent'
 import Reservation from './ReservationComponent'
 import Pricing from './PricingComponent'
 import Photos from './PhotosComponent'
+import Menu from './MenuComponent'
 import { View, Platform, StyleSheet, ImageBackground } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { createStackNavigator } from 'react-navigation-stack'
@@ -144,6 +145,44 @@ const PhotosNavigator = createStackNavigator(
   }
 )
 
+const MenuNavigator = createStackNavigator(
+  {
+    Menu: { screen: Menu }
+  },
+  {
+    // FIXME: change color scheme
+    defaultNavigationOptions: ({ navigation }) => ({
+      // headerTransparent: 'true',
+      // headerStyle: {
+      //   backgroundColor: 'rgba(255,255,255,0.9)'
+      //   // <Image source={{ uri: baseUrl + photoBkgPicture }} />
+      // },
+      headerBackground: () => (
+        <ImageBackground
+          source={{ uri: baseUrl + menuBkgPicture }}
+          style={{ width: '100%', height: '100%' }}
+        ></ImageBackground>
+      ),
+      headerTitleStyle: {
+        textAlign: 'center',
+        color: '#fff',
+        fontWeight: 'bold',
+        flex: 1,
+        marginRight: 60
+      },
+      headerLeft: (
+        <Icon
+          name='utensils'
+          type='font-awesome-5'
+          color='#fff'
+          iconStyle={{ marginLeft: 130 }}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      )
+    })
+  }
+)
+
 const MainNavigator = createDrawerNavigator(
   {
     Home: {
@@ -175,6 +214,20 @@ const MainNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => (
           <Icon
             name='images'
+            type='font-awesome-5'
+            size={24}
+            color={tintColor}
+          />
+        )
+      }
+    },
+    Menu: {
+      screen: MenuNavigator,
+      navigationOptions: {
+        drawerLabel: 'See the Menu',
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name='utensils'
             type='font-awesome-5'
             size={24}
             color={tintColor}
@@ -226,6 +279,7 @@ class Main extends Component {
 
 const photoBkgPicture = 'images/fireside-chairs.jpg'
 const pricingBkgPicture = 'images/balconies/balcony-1-xl.jpg'
+const menuBkgPicture = 'images/cafe/cafe-4-sm.jpg'
 
 const styles = StyleSheet.create({
   stackIcon: {
