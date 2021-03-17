@@ -62,7 +62,7 @@ function Carousel({ picture }) {
 }
 
 function Slide({ data }) {
-  console.log(data.image)
+  // console.log(data.image)
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
 
   return (

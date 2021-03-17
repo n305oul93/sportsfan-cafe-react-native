@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import { View, Text, ImageBackground, StyleSheet, Button } from 'react-native'
-import thorpeness from '../components/images/thorpeness.jpg'
+import { baseUrl } from '../shared/baseUrl'
+// import thorpeness from '../components/images/thorpeness.jpg'
 
 class Home extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      thorpeness: 'images/thorpeness.jpg'
+    }
+  }
+
   static navigationOptions = {
     title: 'Sports Fan Cafè'
   }
@@ -10,7 +18,11 @@ class Home extends Component {
   // FIXME: change color scheme
   render() {
     return (
-      <ImageBackground source={thorpeness} style={styles.image} blurRadius={2}>
+      <ImageBackground
+        source={{ uri: baseUrl + this.state.thorpeness }}
+        style={styles.image}
+        blurRadius={2}
+      >
         <Text style={styles.smallTitle}>Dallas Premier Sports Cafè</Text>
         <Text style={styles.title}>Sports, Fun & Food</Text>
         <View style={styles.titleButton}>

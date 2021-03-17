@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet, ScrollView, Button } from 'react-native'
 import { Card } from 'react-native-elements'
+import { baseUrl } from '../shared/baseUrl'
 
 class Pricing extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      dayPassUrl: 'images/gamerooms/gameroom-pool-table-sm.jpg',
+      officeMembershipUrl: 'images/meetings/meeting-room-sm.jpg',
+      cafeMembershipUrl: 'images/cafe/cafe-1-sm.jpg'
+    }
+  }
+
   static navigationOptions = {
     title: 'Pricing'
   }
@@ -14,7 +24,7 @@ class Pricing extends Component {
         <View style={styles.topCard}>
           <Card
             featuredSubtitle='Day Pass'
-            image={require('../components/images/gamerooms/gameroom-pool-table-sm.jpg')}
+            image={{ uri: baseUrl + this.state.dayPassUrl }}
           >
             <Text style={styles.cardText}>$20/day</Text>
             <Text style={styles.cardText}>
@@ -31,7 +41,7 @@ class Pricing extends Component {
 
           <Card
             featuredSubtitle='Virtual Office Membershio'
-            image={require('../components/images/meetings/meeting-room-sm.jpg')}
+            image={{ uri: baseUrl + this.state.officeMembershipUrl }}
           >
             <Text style={styles.cardText}>$50/month</Text>
             <Text style={styles.cardText}>
@@ -47,7 +57,7 @@ class Pricing extends Component {
 
           <Card
             featuredSubtitle='Cafe Club Membership'
-            image={require('../components/images/cafe/cafe-1-sm.jpg')}
+            image={{ uri: baseUrl + this.state.cafeMembershipUrl }}
           >
             <Text style={styles.cardText}>$99/month</Text>
             <Text style={styles.cardText}>

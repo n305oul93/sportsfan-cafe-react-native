@@ -3,11 +3,12 @@ import Home from './HomeComponent'
 import Reservation from './ReservationComponent'
 import Pricing from './PricingComponent'
 import Photos from './PhotosComponent'
-import { View, Platform, StyleSheet } from 'react-native'
+import { View, Platform, StyleSheet, ImageBackground } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createDrawerNavigator } from 'react-navigation-drawer'
 import { createAppContainer } from 'react-navigation'
+import { baseUrl } from '../shared/baseUrl'
 
 const HomeNavigator = createStackNavigator(
   {
@@ -76,12 +77,19 @@ const PricingNavigator = createStackNavigator(
     // FIXME: change color scheme
     defaultNavigationOptions: ({ navigation }) => ({
       // headerTransparent: 'true',
-      headerStyle: {
-        backgroundColor: 'rgba(255,255,255,0.9)'
-      },
+      // headerStyle: {
+      //   backgroundColor: 'rgba(255,255,255,0.9)'
+      // },
+      headerBackground: () => (
+        <ImageBackground
+          source={{ uri: baseUrl + photoBkgPicture }}
+          style={{ width: '100%', height: '100%' }}
+        ></ImageBackground>
+      ),
       headerTitleStyle: {
         textAlign: 'center',
-        color: '#000',
+        color: '#fff',
+        fontWeight: 'bold',
         flex: 1,
         marginRight: 60
       },
@@ -89,7 +97,7 @@ const PricingNavigator = createStackNavigator(
         <Icon
           name='dollar-sign'
           type='font-awesome-5'
-          color='#c0c0c0'
+          color='#fff'
           iconStyle={{ marginLeft: 150 }}
           onPress={() => navigation.toggleDrawer()}
         />
@@ -106,12 +114,20 @@ const PhotosNavigator = createStackNavigator(
     // FIXME: change color scheme
     defaultNavigationOptions: ({ navigation }) => ({
       // headerTransparent: 'true',
-      headerStyle: {
-        backgroundColor: 'rgba(255,255,255,0.9)'
-      },
+      // headerStyle: {
+      //   backgroundColor: 'rgba(255,255,255,0.9)'
+      //   // <Image source={{ uri: baseUrl + photoBkgPicture }} />
+      // },
+      headerBackground: () => (
+        <ImageBackground
+          source={{ uri: baseUrl + pricingBkgPicture }}
+          style={{ width: '100%', height: '100%' }}
+        ></ImageBackground>
+      ),
       headerTitleStyle: {
         textAlign: 'center',
-        color: '#000',
+        color: '#fff',
+        fontWeight: 'bold',
         flex: 1,
         marginRight: 60
       },
@@ -119,7 +135,7 @@ const PhotosNavigator = createStackNavigator(
         <Icon
           name='images'
           type='font-awesome-5'
-          color='#c0c0c0'
+          color='#fff'
           iconStyle={{ marginLeft: 130 }}
           onPress={() => navigation.toggleDrawer()}
         />
@@ -207,6 +223,9 @@ class Main extends Component {
     )
   }
 }
+
+const photoBkgPicture = 'images/fireside-chairs.jpg'
+const pricingBkgPicture = 'images/balconies/balcony-1-xl.jpg'
 
 const styles = StyleSheet.create({
   stackIcon: {
