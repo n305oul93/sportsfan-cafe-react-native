@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Home from './HomeComponent'
 import Reservation from './ReservationComponent'
+import Pricing from './PricingComponent'
 import { View, Platform, StyleSheet } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { createStackNavigator } from 'react-navigation-stack'
@@ -66,6 +67,36 @@ const ReservationNavigator = createStackNavigator(
   }
 )
 
+const PricingNavigator = createStackNavigator(
+  {
+    Pricing: { screen: Pricing }
+  },
+  {
+    // FIXME: change color scheme
+    defaultNavigationOptions: ({ navigation }) => ({
+      // headerTransparent: 'true',
+      headerStyle: {
+        backgroundColor: 'rgba(255,255,255,0.9)'
+      },
+      headerTitleStyle: {
+        textAlign: 'center',
+        color: '#000',
+        flex: 1,
+        marginRight: 60
+      },
+      headerLeft: (
+        <Icon
+          name='dollar-sign'
+          type='font-awesome-5'
+          color='#c0c0c0'
+          iconStyle={{ marginLeft: 150 }}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      )
+    })
+  }
+)
+
 const MainNavigator = createDrawerNavigator(
   {
     Home: {
@@ -83,6 +114,20 @@ const MainNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => (
           <Icon
             name='calendar-alt'
+            type='font-awesome-5'
+            size={24}
+            color={tintColor}
+          />
+        )
+      }
+    },
+    Pricing: {
+      screen: PricingNavigator,
+      navigationOptions: {
+        drawerLabel: 'See Room Pricing',
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name='dollar-sign'
             type='font-awesome-5'
             size={24}
             color={tintColor}
