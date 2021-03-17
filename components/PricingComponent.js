@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
-import { Card, Button } from 'react-native-elements'
+import { View, Text, Image, StyleSheet, ScrollView, Button } from 'react-native'
+import { Card } from 'react-native-elements'
 
 class Pricing extends Component {
   static navigationOptions = {
@@ -21,7 +21,7 @@ class Pricing extends Component {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
               error.
             </Text>
-            {/* FIXME: can't change button color */}
+            {/* FIXME: correct color scheme */}
             <Button
               title='Reserve'
               color='#462345'

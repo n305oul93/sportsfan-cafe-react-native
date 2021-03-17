@@ -1,0 +1,53 @@
+{
+  "balconyPics": [
+    {
+      "id": 0,
+      "title": "Balcony 3",
+      "image": "images/balconies/balcony-3-sm.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Balcony 2",
+      "image": "images/balconies/balcony-2-sm.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Balcony 1",
+      "image": "images/balconies/balcony-1-sm.jpg"
+    }
+  ],
+  "gameroomPics": [
+    {
+      "id": 0,
+      "title": "Gameroom 3",
+      "image": "images/gamerooms/gameroom-pool-table-2.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Gameroom 2",
+      "image": "images/gamerooms/gameroom-pool-table.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Gameroom 1",
+      "image": "images/gamerooms/foosball-1-sm.jpg"
+    }
+  ],
+  "cafePics": [
+    {
+      "id": 0,
+      "title": "Cafe 3",
+      "image": "images/cafe/cafe-1.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Cafe 2",
+      "image": "images/cafe/cafe-2.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Cafe 1",
+      "image": "images/cafe/cafe-3.jpg"
+    }
+  ]
+}

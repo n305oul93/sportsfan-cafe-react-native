@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Home from './HomeComponent'
 import Reservation from './ReservationComponent'
 import Pricing from './PricingComponent'
+import Photos from './PhotosComponent'
 import { View, Platform, StyleSheet } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { createStackNavigator } from 'react-navigation-stack'
@@ -97,6 +98,36 @@ const PricingNavigator = createStackNavigator(
   }
 )
 
+const PhotosNavigator = createStackNavigator(
+  {
+    Photos: { screen: Photos }
+  },
+  {
+    // FIXME: change color scheme
+    defaultNavigationOptions: ({ navigation }) => ({
+      // headerTransparent: 'true',
+      headerStyle: {
+        backgroundColor: 'rgba(255,255,255,0.9)'
+      },
+      headerTitleStyle: {
+        textAlign: 'center',
+        color: '#000',
+        flex: 1,
+        marginRight: 60
+      },
+      headerLeft: (
+        <Icon
+          name='images'
+          type='font-awesome-5'
+          color='#c0c0c0'
+          iconStyle={{ marginLeft: 130 }}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      )
+    })
+  }
+)
+
 const MainNavigator = createDrawerNavigator(
   {
     Home: {
@@ -107,20 +138,6 @@ const MainNavigator = createDrawerNavigator(
         )
       }
     },
-    Reservation: {
-      screen: ReservationNavigator,
-      navigationOptions: {
-        drawerLabel: 'Reserve a Private Room',
-        drawerIcon: ({ tintColor }) => (
-          <Icon
-            name='calendar-alt'
-            type='font-awesome-5'
-            size={24}
-            color={tintColor}
-          />
-        )
-      }
-    },
     Pricing: {
       screen: PricingNavigator,
       navigationOptions: {
@@ -128,6 +145,34 @@ const MainNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => (
           <Icon
             name='dollar-sign'
+            type='font-awesome-5'
+            size={24}
+            color={tintColor}
+          />
+        )
+      }
+    },
+    Photos: {
+      screen: PhotosNavigator,
+      navigationOptions: {
+        drawerLabel: 'See Room Photos',
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name='images'
+            type='font-awesome-5'
+            size={24}
+            color={tintColor}
+          />
+        )
+      }
+    },
+    Reservation: {
+      screen: ReservationNavigator,
+      navigationOptions: {
+        drawerLabel: 'Reserve a Private Room',
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name='calendar-alt'
             type='font-awesome-5'
             size={24}
             color={tintColor}
