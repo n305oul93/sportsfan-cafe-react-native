@@ -47,18 +47,26 @@ function Carousel({ picture }) {
   // }, [index])
 
   return (
-    <FlatList
-      data={picture}
-      style={{ flex: 1 }}
-      renderItem={({ item }) => {
-        return <Slide data={item} />
-      }}
-      keyExtractor={item => item.id.toString()}
-      pagingEnabled
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      onScroll={onScroll}
-    />
+    <>
+      <FlatList
+        data={picture}
+        style={{ flex: 1 }}
+        renderItem={({ item }) => {
+          return (
+            <>
+              <Slide data={item} />
+              <Pagination index={index} picture={picture}></Pagination>
+            </>
+          )
+        }}
+        keyExtractor={item => item.id.toString()}
+        pagingEnabled
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        onScroll={onScroll}
+      />
+      {/* <Pagination index={index} picture={picture}></Pagination> */}
+    </>
   )
 }
 
@@ -80,6 +88,26 @@ function Slide({ data }) {
         style={{ width: windowWidth * 0.9, height: windowHeight * 0.6 }}
       ></Image>
       <Text style={{ fontSize: 24 }}>{data.title}</Text>
+    </View>
+  )
+}
+
+function Pagination({ index, picture }) {
+  return (
+    <View style={styles.pagination} pointerEvents='none'>
+      {picture.map((_, i) => {
+        return (
+          <View
+            key={i}
+            style={[
+              styles.paginationDot,
+              index === i
+                ? styles.paginationDotActive
+                : styles.paginationDotInactive
+            ]}
+          />
+        )
+      })}
     </View>
   )
 }
@@ -116,7 +144,22 @@ const styles = StyleSheet.create({
   pictureTitle: {
     fontSize: 30,
     marginLeft: 20
-  }
+  },
+  pagination: {
+    position: 'absolute',
+    bottom: 8,
+    width: '100%',
+    justifyContent: 'center',
+    flexDirection: 'row'
+  },
+  paginationDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginHorizontal: 2
+  },
+  paginationDotActive: { backgroundColor: 'lightblue' },
+  paginationDotInactive: { backgroundColor: 'gray' }
 })
 
 export default Photos
