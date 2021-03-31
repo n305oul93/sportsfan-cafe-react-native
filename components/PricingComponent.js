@@ -31,10 +31,9 @@ class Pricing extends Component {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
               error.
             </Text>
-            {/* FIXME: correct color scheme */}
             <Button
               title='Reserve'
-              color='#462345'
+              color='#3a73a5'
               onPress={() => this.props.navigation.navigate('Reservation')}
             />
           </Card>
@@ -50,7 +49,7 @@ class Pricing extends Component {
             </Text>
             <Button
               title='Reserve'
-              color='#5637dd'
+              color='#3a73a5'
               onPress={() => this.props.navigation.navigate('Reservation')}
             />
           </Card>
@@ -66,7 +65,7 @@ class Pricing extends Component {
             </Text>
             <Button
               title='Reserve'
-              color='#5637dd'
+              color='#3a73a5'
               onPress={() => this.props.navigation.navigate('Reservation')}
             />
           </Card>

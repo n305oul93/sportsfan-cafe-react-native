@@ -42,9 +42,9 @@ function Carousel({ picture }) {
   }, [])
 
   // Use the index
-  useEffect(() => {
-    console.warn(index)
-  }, [index])
+  // useEffect(() => {
+  //   console.warn(index)
+  // }, [index])
 
   return (
     <FlatList
@@ -57,6 +57,7 @@ function Carousel({ picture }) {
       pagingEnabled
       horizontal
       showsHorizontalScrollIndicator={false}
+      onScroll={onScroll}
     />
   )
 }

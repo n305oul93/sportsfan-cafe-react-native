@@ -31,7 +31,7 @@ const HomeNavigator = createStackNavigator(
         <Icon
           name='football-ball'
           type='font-awesome-5'
-          color='#c0c0c0'
+          color='#d9dcd6'
           iconStyle={{ marginLeft: 100 }}
           onPress={() => navigation.toggleDrawer()}
         />
@@ -45,7 +45,6 @@ const ReservationNavigator = createStackNavigator(
     Reservation: { screen: Reservation }
   },
   {
-    // FIXME: change color scheme
     defaultNavigationOptions: ({ navigation }) => ({
       headerTransparent: 'true',
       headerStyle: {
@@ -61,7 +60,7 @@ const ReservationNavigator = createStackNavigator(
         <Icon
           name='calendar-alt'
           type='font-awesome-5'
-          color='#c0c0c0'
+          color='#d9dcd6'
           iconStyle={{ marginLeft: 60 }}
           onPress={() => navigation.toggleDrawer()}
         />
@@ -75,12 +74,7 @@ const PricingNavigator = createStackNavigator(
     Pricing: { screen: Pricing }
   },
   {
-    // FIXME: change color scheme
     defaultNavigationOptions: ({ navigation }) => ({
-      // headerTransparent: 'true',
-      // headerStyle: {
-      //   backgroundColor: 'rgba(255,255,255,0.9)'
-      // },
       headerBackground: () => (
         <ImageBackground
           source={{ uri: baseUrl + photoBkgPicture }}
@@ -112,13 +106,7 @@ const PhotosNavigator = createStackNavigator(
     Photos: { screen: Photos }
   },
   {
-    // FIXME: change color scheme
     defaultNavigationOptions: ({ navigation }) => ({
-      // headerTransparent: 'true',
-      // headerStyle: {
-      //   backgroundColor: 'rgba(255,255,255,0.9)'
-      //   // <Image source={{ uri: baseUrl + photoBkgPicture }} />
-      // },
       headerBackground: () => (
         <ImageBackground
           source={{ uri: baseUrl + pricingBkgPicture }}
@@ -150,13 +138,7 @@ const MenuNavigator = createStackNavigator(
     Menu: { screen: Menu }
   },
   {
-    // FIXME: change color scheme
     defaultNavigationOptions: ({ navigation }) => ({
-      // headerTransparent: 'true',
-      // headerStyle: {
-      //   backgroundColor: 'rgba(255,255,255,0.9)'
-      //   // <Image source={{ uri: baseUrl + photoBkgPicture }} />
-      // },
       headerBackground: () => (
         <ImageBackground
           source={{ uri: baseUrl + menuBkgPicture }}
@@ -196,7 +178,7 @@ const MainNavigator = createDrawerNavigator(
     Pricing: {
       screen: PricingNavigator,
       navigationOptions: {
-        drawerLabel: 'See Room Pricing',
+        drawerLabel: 'Room Pricing',
         drawerIcon: ({ tintColor }) => (
           <Icon
             name='dollar-sign'
@@ -210,7 +192,7 @@ const MainNavigator = createDrawerNavigator(
     Photos: {
       screen: PhotosNavigator,
       navigationOptions: {
-        drawerLabel: 'See Room Photos',
+        drawerLabel: 'Room Photos',
         drawerIcon: ({ tintColor }) => (
           <Icon
             name='images'
@@ -224,7 +206,7 @@ const MainNavigator = createDrawerNavigator(
     Menu: {
       screen: MenuNavigator,
       navigationOptions: {
-        drawerLabel: 'See the Menu',
+        drawerLabel: 'Menu',
         drawerIcon: ({ tintColor }) => (
           <Icon
             name='utensils'
@@ -251,11 +233,10 @@ const MainNavigator = createDrawerNavigator(
     }
   },
   {
-    // TODO: change color scheme
-    drawerBackgroundColor: '#ddd',
+    drawerBackgroundColor: '#d9dcd6',
     contentOptions: {
       activeBackgroundColor: '#ccc',
-      activeTintColor: '#0b99d6'
+      activeTintColor: '#2F6690'
     }
   }
 )

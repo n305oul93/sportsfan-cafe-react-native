@@ -44,10 +44,9 @@ class Menu extends Component {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
               error.
             </Text>
-            {/* FIXME: correct color scheme */}
             <Button
               title='See Menu'
-              color='#462345'
+              color='#3a73a5'
               onPress={() => {
                 this.toggleMenuModal()
                 this.setState({ menu: this.state.breakfastMenu })
@@ -63,10 +62,9 @@ class Menu extends Component {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
               error.
             </Text>
-            {/* FIXME: correct color scheme */}
             <Button
               title='See Menu'
-              color='#462345'
+              color='#3a73a5'
               onPress={() => {
                 this.toggleMenuModal()
                 this.setState({ menu: this.state.lunchMenu })
@@ -91,7 +89,7 @@ class Menu extends Component {
               onPress={() => {
                 this.toggleMenuModal()
               }}
-              color='#5637dd'
+              color='#3a73a5'
               title='Close'
             />
           </View>

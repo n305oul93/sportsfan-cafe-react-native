@@ -15,7 +15,6 @@ class Home extends Component {
     title: 'Sports Fan Cafè'
   }
 
-  // FIXME: change color scheme
   render() {
     return (
       <ImageBackground
@@ -28,7 +27,7 @@ class Home extends Component {
         <View style={styles.titleButton}>
           <Button
             title='Request a Room'
-            color='#188af5'
+            color='#3a73a5'
             onPress={() => this.props.navigation.navigate('Reservation')}
           />
         </View>

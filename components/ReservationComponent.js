@@ -46,7 +46,6 @@ class Reservation extends Component {
     })
   }
 
-  // FIXME: change color scheme
   render() {
     return (
       <ScrollView>
@@ -91,12 +90,11 @@ class Reservation extends Component {
               this.setState({ showCalendar: !this.state.showCalendar })
             }
             title={this.state.date.toLocaleDateString('en-US')}
-            color='#5637dd'
+            color='#3a73a5'
             accessibilityLabel='Tap me to select a reservation date'
           />
         </View>
         {this.state.showCalendar && (
-          // TODO: check docs for props
           <DateTimePicker
             style={styles.formItem}
             value={this.state.date}
@@ -112,7 +110,7 @@ class Reservation extends Component {
           <Button
             onPress={() => this.handleReservation()}
             title='Search'
-            color='#5637dd'
+            color='#3a73a5'
             accessibilityLabel='Tap me to search for available dates'
           />
         </View>
@@ -140,7 +138,7 @@ class Reservation extends Component {
                 this.toggleReservationModal()
                 this.resetForm()
               }}
-              color='#5637dd'
+              color='#3a7ca5'
               title='Reserve'
             />
           </View>
@@ -182,7 +180,7 @@ const styles = StyleSheet.create({
   reservationModalTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    backgroundColor: '#5637dd',
+    backgroundColor: '#3a7ca5',
     textAlign: 'center',
     color: '#fff',
     marginBottom: 20
