@@ -26,7 +26,7 @@ class Home extends Component {
         <Text style={styles.title}>Sports, Fun & Food</Text>
         <View style={styles.titleButton}>
           <Button
-            title='Request a Room'
+            title='Reserve a Room'
             color='#3a73a5'
             onPress={() => this.props.navigation.navigate('Reservation')}
           />

@@ -39,7 +39,7 @@ class Pricing extends Component {
           </Card>
 
           <Card
-            featuredSubtitle='Virtual Office Membershio'
+            featuredSubtitle='Office Membership'
             image={{ uri: baseUrl + this.state.officeMembershipUrl }}
           >
             <Text style={styles.cardText}>$50/month</Text>
